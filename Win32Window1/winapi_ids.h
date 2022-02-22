@@ -8,6 +8,6 @@ processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 
 // this is used to subclass 
 
-#define MY_COMMAND  (WM_COMMAND + 1)
-#define MY_NOTIFY   (WM_NOTIFY + 1)
-#define MY_CTLCOLORSTATIC	(WM_CTLCOLORSTATIC + 1)
+constexpr auto MY_COMMAND = 0x0111 + 1; // WM_COMMAND 0x0111
+constexpr auto MY_NOTIFY = 0x004E + 1; // WM_NOTIFY 0x004E
+constexpr auto MY_CTLCOLORSTATIC = 0x0138 + 1; // WM_CTLCOLORSTATIC 0x0138

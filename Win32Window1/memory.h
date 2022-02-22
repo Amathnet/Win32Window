@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 
-#include "target_info.h"
 
 // name = window name
 DWORD getPID(LPCSTR name)

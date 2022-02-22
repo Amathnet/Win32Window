@@ -99,7 +99,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
     case WM_NCHITTEST:
         return ptr->OnNchitTest(hwnd, message, wParam, lParam);
 
-    case WM_NOTIFY:
+    case WM_NOTIFY: // 0x004E
         SendMessage(((NMHDR*)lParam)->hwndFrom, MY_NOTIFY, wParam, lParam);
         return 0;
 
@@ -107,7 +107,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
         if (lParam != 0) SendMessage((HWND)lParam, MY_COMMAND, wParam, lParam);
         return 1;
 
-    case WM_CTLCOLORSTATIC:
+    case WM_CTLCOLORSTATIC: // 0x0138
         SendMessage((HWND)lParam, MY_CTLCOLORSTATIC, wParam, lParam);
         return (LRESULT)CreateSolidBrush(ptr->m_info.color);;
 
