@@ -97,12 +97,9 @@ private:
                 if (m_state) coloring(lpnmCD, m_info.on.color);
                 else coloring(lpnmCD, m_info.off.color);
             }
-
         }
     }
 
-
     bool m_state;
-
     ButtonInfo m_info;
 };

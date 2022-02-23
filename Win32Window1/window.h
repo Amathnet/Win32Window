@@ -8,7 +8,7 @@
 EXTERN_C IMAGE_DOS_HEADER __ImageBase;
 #define HINST_THISCOMPONENT ((HINSTANCE)&__ImageBase)
 
-struct wnd_info
+struct WindowInfo
 {
     LPCSTR title;
     SIZE position, size;
@@ -18,7 +18,7 @@ struct wnd_info
 class Window
 {
 public:
-    void init(wnd_info info)
+    void init(WindowInfo info)
     {
         m_info = info;
         create();
@@ -82,7 +82,7 @@ private:
         return hit;
     }
 
-    wnd_info m_info;
+    WindowInfo m_info;
 };
 
 LRESULT CALLBACK Window::WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -99,7 +99,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
     case WM_NCHITTEST:
         return ptr->OnNchitTest(hwnd, message, wParam, lParam);
 
-    case WM_NOTIFY: // 0x004E
+    case WM_NOTIFY:
         SendMessage(((NMHDR*)lParam)->hwndFrom, MY_NOTIFY, wParam, lParam);
         return 0;
 
@@ -107,7 +107,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
         if (lParam != 0) SendMessage((HWND)lParam, MY_COMMAND, wParam, lParam);
         return 1;
 
-    case WM_CTLCOLORSTATIC: // 0x0138
+    case WM_CTLCOLORSTATIC:
         SendMessage((HWND)lParam, MY_CTLCOLORSTATIC, wParam, lParam);
         return (LRESULT)CreateSolidBrush(ptr->m_info.color);;
 

@@ -16,19 +16,10 @@
     <Filter Include="Headerdateien\Window">
       <UniqueIdentifier>{8cadace4-8bbb-41e5-9c6d-fa842cbd8874}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\File">
-      <UniqueIdentifier>{fa676477-47e4-437d-b563-7bc51ab034e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\Memory">
-      <UniqueIdentifier>{d602a5a7-b353-4a18-9479-f0a61682c3e6}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Quelle.cpp">
       <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="toolbar.h">
-      <Filter>Headerdateien\Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,12 +31,6 @@
     </ClInclude>
     <ClInclude Include="window.h">
       <Filter>Headerdateien\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="text_file.h">
-      <Filter>Headerdateien\File</Filter>
-    </ClInclude>
-    <ClInclude Include="memory.h">
-      <Filter>Headerdateien\Memory</Filter>
     </ClInclude>
     <ClInclude Include="editbox.h">
       <Filter>Headerdateien\Window</Filter>

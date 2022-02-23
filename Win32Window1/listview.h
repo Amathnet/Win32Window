@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 
-/* look like:
+/* looks like:
 	COLUMN | COLUMN  | COLUMN
 	ITEM   | SUBITEM | SUBITEM
 */
@@ -32,7 +32,6 @@ public:
 		m_hwnd = CreateWindow(WC_LISTVIEW, NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | LVS_REPORT | LVS_EDITLABELS,
 			m_info.position.cx, m_info.position.cy, m_info.size.cx, m_info.size.cy, m_info.parent, NULL, NULL, NULL);
 	};
-
 
 	// add column in order its created
 	void addColum(LPCSTR text, int width)
